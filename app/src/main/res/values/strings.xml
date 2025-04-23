@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Node-edit</string>
     <string name="title_activity_setting">Setting</string>
+    <string name="title_activity_editor">Editor</string>
 </resources>

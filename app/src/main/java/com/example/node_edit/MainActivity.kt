@@ -92,7 +92,9 @@ fun MainContent(padding:PaddingValues = PaddingValues(0.dp)){
                 .padding(top = 10.dp)
                 .width(150.dp)
         ) {
-            TextIconButton(modifier = Modifier.fillMaxWidth(), icon = Icons.Filled.Add, onClick = {}) {
+            TextIconButton(modifier = Modifier.fillMaxWidth(), icon = Icons.Filled.Add, onClick = {
+                context.startActivity(Intent(context,Editor::class.java))
+            }) {
                 Text("创建项目")
             }
 

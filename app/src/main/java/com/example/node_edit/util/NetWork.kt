@@ -2,6 +2,7 @@ package com.example.node_edit.util
 
 import okhttp3.ConnectionPool
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Request.Builder
@@ -51,7 +52,7 @@ object HttpUtil {
     /**
      * Content-Type
      */
-    private val MediaType_ContentType = MediaType.parse(ContentType)
+    private val MediaType_ContentType = ContentType.toMediaTypeOrNull()
 
     /**
      * 获取Http Client对象
@@ -79,7 +80,7 @@ fun searchNodeVersion(version:Int) : ArrayList<NodeVersionType>{
         .build()
     var response: Response? = null
     response = client.newCall(request).execute()
-    val ja = JSONArray(response.body()!!.string())
+    val ja = JSONArray(response.body!!.string())
 
     val r = ArrayList<NodeVersionType>()
 

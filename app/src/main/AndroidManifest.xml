@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" /> <!-- Android 10 及以下需要 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +18,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nodeedit"
         tools:targetApi="31">
+        <service
+            android:name=".service.BaseServiceManager"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name=".Editor"
+            android:exported="false"
+            android:label="@string/title_activity_editor"
+            android:theme="@style/Theme.Nodeedit" />
         <activity
             android:name=".Setting"
             android:exported="true"
